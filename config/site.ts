@@ -18,7 +18,7 @@ export const siteConfig = {
   coverage: "Pan India",
 
   /** Primary business email */
-  email: "[EMAIL_ADDRESS]",
+  email: "airconaarav@gmail.com",
 
   /** Display-formatted phone number (with country code & spaces) */
   phone: "+91 8808231587",
@@ -37,6 +37,7 @@ export const siteConfig = {
     label: "Pan India Service Network",
     description:
       "Serving Residential, Commercial & Industrial Clients Across India",
+    officeAddress: "Gata No 67A, Village Babhani, Uttar Pradesh 274001"
   },
 
   /** Social media profile URLs (leave empty string if unused) */
@@ -57,9 +58,9 @@ export const siteConfig = {
 
   /** Branding file paths (relative to /public) */
   branding: {
-    logo: "/branding/logo.svg",
-    logoDark: "/branding/logo-dark.svg",
-    favicon: "/branding/favicon.svg",
+    logo: "/branding/logo-transparent.png",
+    logoDark: "/branding/logo-transparent.png",
+    favicon: "/branding/favicon.png",
     ogImage: "/branding/og-image.jpg",
   },
 } as const;

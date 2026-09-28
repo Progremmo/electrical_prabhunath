@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MessageSquare, ArrowRight, ShieldCheck, CheckCircle2, Clock, Sparkles } from "lucide-react";
+import { WhatsappIcon } from "@/components/WhatsappIcon";
 import { siteConfig } from "@/config/site";
 import { homeContent } from "@/content/home";
 
@@ -65,9 +66,9 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-whatsapp-btn"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-7 py-3.5 rounded-xl shadow-lg shadow-emerald-600/20 hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-base px-7 py-3.5 rounded-xl shadow-lg shadow-green-600/20 hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
               >
-                <MessageSquare className="w-5 h-5" />
+                <WhatsappIcon className="w-5 h-5" />
                 <span>WhatsApp Now</span>
               </a>
             </div>

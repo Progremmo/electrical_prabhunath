@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock, MessageSquare, ShieldCheck } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
+import { WhatsappIcon } from "@/components/WhatsappIcon";
 import { siteConfig } from "@/config/site";
 import { contactConfig } from "@/config/contact";
 import { services } from "@/config/services";
@@ -35,7 +36,7 @@ export default function Footer() {
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-emerald-950/80 border border-emerald-800 text-emerald-400 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all shadow-xs"
                 aria-label={`WhatsApp ${siteConfig.shortName}`}>
-                <MessageSquare className="w-5 h-5" />
+                <WhatsappIcon className="w-5 h-5" />
               </a>
               <a href={`tel:${siteConfig.phoneRaw}`}
                 className="w-10 h-10 rounded-xl bg-teal-950/80 border border-teal-800 text-teal-400 flex items-center justify-center hover:bg-teal-600 hover:text-white transition-all shadow-xs"

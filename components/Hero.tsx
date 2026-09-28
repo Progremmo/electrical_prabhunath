@@ -110,8 +110,8 @@ export default function Hero() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white border border-gray-100">
                 <div className="relative w-full aspect-[4/3]">
                   <Image
-                    src="/images/hero-hvac.svg"
-                    alt="HVAC Air Conditioner Technician and Service Illustration"
+                    src="/images/hero-real.jpg"
+                    alt="Professional HVAC technician repairing a modern white split air conditioner in a contemporary living room"
                     fill
                     priority
                     className="object-cover"

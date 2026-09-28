@@ -429,7 +429,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: "g2",
     title: "Inverter PCB Diagnostic & Bench Repair",
     category: "Repair",
-    imageUrl: "/images/gallery-repair-1.svg",
+    imageUrl: "/images/repair-real.jpg",
     description: "Component-level micro-soldering and capacitor replacement for a multi-split inverter unit."
   },
   {

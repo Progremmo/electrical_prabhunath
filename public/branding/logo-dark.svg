@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 56" fill="none">
+  <!-- Icon mark: inverted for dark backgrounds -->
+  <g transform="translate(0,0)">
+    <rect width="56" height="56" rx="14" fill="#ffffff"/>
+    <!-- Snowflake axes -->
+    <line x1="28" y1="12" x2="28" y2="44" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="12" y1="28" x2="44" y2="28" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="16.7" y1="16.7" x2="39.3" y2="39.3" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+    <line x1="39.3" y1="16.7" x2="16.7" y2="39.3" stroke="#0F766E" stroke-width="2" stroke-linecap="round"/>
+    <!-- Branch ticks -->
+    <line x1="28" y1="12" x2="23" y2="17" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="28" y1="12" x2="33" y2="17" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="28" y1="44" x2="23" y2="39" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="28" y1="44" x2="33" y2="39" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="12" y1="28" x2="17" y2="23" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="12" y1="28" x2="17" y2="33" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="44" y1="28" x2="39" y2="23" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="44" y1="28" x2="39" y2="33" stroke="#0F766E" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Center dot -->
+    <circle cx="28" cy="28" r="3.5" fill="#F59E0B"/>
+  </g>
+  <!-- Wordmark (light for dark backgrounds) -->
+  <text x="68" y="26" font-family="Inter,system-ui,sans-serif" font-size="19" font-weight="800" fill="#ffffff" letter-spacing="-0.3">
+    AARAV
+  </text>
+  <text x="139" y="26" font-family="Inter,system-ui,sans-serif" font-size="19" font-weight="800" fill="#38BDF8" letter-spacing="-0.3">
+    AIRCON
+  </text>
+  <text x="69" y="44" font-family="Inter,system-ui,sans-serif" font-size="9.5" font-weight="600" fill="#94A3B8" letter-spacing="1.6">
+    SERVICES
+  </text>
+</svg>

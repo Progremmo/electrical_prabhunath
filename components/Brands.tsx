@@ -1,5 +1,5 @@
 import React from "react";
-import { BRANDS_LIST } from "@/lib/constants";
+import { brands } from "@/config/brands";
 
 export default function Brands() {
   return (
@@ -11,15 +11,14 @@ export default function Brands() {
           </p>
         </div>
 
-        {/* Brands grid in modern grayscale with hover transition */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 items-center">
-          {BRANDS_LIST.map((brand) => (
+          {brands.map((brand) => (
             <div
               key={brand.name}
               className="group flex flex-col items-center justify-center p-4 h-20 rounded-xl bg-slate-50/80 hover:bg-white border border-slate-100 hover:border-teal-200 transition-all duration-300 hover:shadow-md cursor-default"
             >
               <span className="font-extrabold text-base tracking-wider text-gray-400 group-hover:text-teal-700 transition-colors uppercase">
-                {brand.label}
+                {brand.logo}
               </span>
               <span className="text-[10px] text-gray-400 opacity-60 group-hover:opacity-100 transition-opacity">
                 Certified Spares

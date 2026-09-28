@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import SectionTitle from "./SectionTitle";
-import { FAQ_DATA } from "@/lib/constants";
+import { faqs } from "@/config/faq";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
 export default function FAQ() {
@@ -18,11 +18,11 @@ export default function FAQ() {
         <SectionTitle
           badge="Frequently Asked Questions"
           title="Got Questions? We Have Answers"
-          subtitle="Everything you need to know about our Pan India AC repair, gas refilling, and maintenance contracts."
+          subtitle="Everything you need to know about our AC repair, gas refilling, and maintenance contracts."
         />
 
         <div className="space-y-4 mt-8">
-          {FAQ_DATA.map((faq) => {
+          {faqs.map((faq) => {
             const isOpen = openId === faq.id;
             return (
               <div
@@ -64,7 +64,6 @@ export default function FAQ() {
                   </div>
                 </button>
 
-                {/* Accordion Content with smooth height transition */}
                 <div
                   className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
                     isOpen ? "max-h-96 pb-6 opacity-100" : "max-h-0 pb-0 opacity-0"

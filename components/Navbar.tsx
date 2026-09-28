@@ -5,7 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Phone, Menu, X, ArrowRight, ShieldCheck } from "lucide-react";
-import { COMPANY_DETAILS } from "@/lib/constants";
+import { siteConfig } from "@/config/site";
+import { contactConfig } from "@/config/contact";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -13,13 +14,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -45,7 +40,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center gap-1 text-emerald-400 font-medium">
               <ShieldCheck className="w-3.5 h-3.5" />
-              Pan India Certified HVAC Network
+              {siteConfig.coverage} Certified HVAC Network
             </span>
             <span className="hidden md:inline text-gray-600">|</span>
             <span className="hidden md:inline text-gray-400">
@@ -53,9 +48,9 @@ export default function Navbar() {
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs font-medium">
-            <span className="text-gray-300">Mon - Sun: 8:00 AM - 9:00 PM</span>
+            <span className="text-gray-300">{contactConfig.businessHours.topBarDisplay}</span>
             <a
-              href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+              href={`tel:${siteConfig.phoneRaw}`}
               className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1 font-semibold"
             >
               <span>Emergency 24/7 Hotline</span>
@@ -79,11 +74,12 @@ export default function Navbar() {
               href="/"
               className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-teal-600 rounded-lg p-1"
               id="navbar-logo"
+              aria-label={`${siteConfig.companyName} — Home`}
             >
               <div className="relative w-44 sm:w-52 h-11 transition-transform group-hover:scale-[1.02]">
                 <Image
-                  src="/logo.svg"
-                  alt="Aarav Aircon Services Logo"
+                  src={siteConfig.branding.logo}
+                  alt={`${siteConfig.companyName} Logo`}
                   fill
                   priority
                   className="object-contain"
@@ -92,7 +88,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+            <nav className="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Main navigation">
               {navLinks.map((link) => {
                 const active = isActive(link.href);
                 return (
@@ -115,7 +111,7 @@ export default function Navbar() {
             {/* Desktop CTA Call Now */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+                href={`tel:${siteConfig.phoneRaw}`}
                 id="navbar-call-now-btn"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-700 to-teal-800 hover:from-teal-800 hover:to-teal-900 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
               >
@@ -129,9 +125,9 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <div className="flex md:hidden items-center gap-2">
               <a
-                href={`tel:${COMPANY_DETAILS.phoneRaw}`}
+                href={`tel:${siteConfig.phoneRaw}`}
                 className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-teal-700 text-white shadow-sm"
-                aria-label="Call Aarav Aircon"
+                aria-label={`Call ${siteConfig.shortName}`}
               >
                 <Phone className="w-4 h-4" />
               </a>
@@ -143,11 +139,7 @@ export default function Navbar() {
                 aria-expanded={mobileMenuOpen}
                 aria-label="Toggle navigation menu"
               >
-                {mobileMenuOpen ? (
-                  <X className="w-6 h-6" />
-                ) : (
-                  <Menu className="w-6 h-6" />
-                )}
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
             </div>
           </div>
@@ -155,7 +147,7 @@ export default function Navbar() {
 
         {/* Mobile Flyout Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-100 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl animate-fadeIn">
+          <div className="md:hidden border-t border-gray-100 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
@@ -176,11 +168,11 @@ export default function Navbar() {
             })}
             <div className="pt-4 border-t border-gray-100 flex flex-col gap-2.5">
               <a
-                href={`tel:${COMPANY_DETAILS.phoneRaw}`}
-                className="flex items-center justify-center gap-2.5 w-full bg-teal-700 text-white font-semibold py-3 rounded-xl shadow-md active:scale-98 text-center text-sm"
+                href={`tel:${siteConfig.phoneRaw}`}
+                className="flex items-center justify-center gap-2.5 w-full bg-teal-700 text-white font-semibold py-3 rounded-xl shadow-md text-center text-sm"
               >
                 <Phone className="w-4 h-4" />
-                <span>Call {COMPANY_DETAILS.phoneDisplay}</span>
+                <span>Call {siteConfig.phone}</span>
               </a>
               <Link
                 href="/contact"

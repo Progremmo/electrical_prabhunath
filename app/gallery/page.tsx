@@ -60,7 +60,7 @@ export default function GalleryPage() {
           {filteredItems.map((item) => (
             <div key={item.id} className="group bg-white rounded-3xl overflow-hidden border border-gray-200/80 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between">
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-                <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
+                <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                   <span className="text-white text-xs font-semibold flex items-center gap-1.5">
                     <Eye className="w-4 h-4 text-teal-400" />

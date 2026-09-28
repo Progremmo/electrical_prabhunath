@@ -45,7 +45,7 @@ export default function ServicesPage() {
                 <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10`}>
                   <div className={`lg:col-span-5 relative ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
                     <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
-                      <Image src={service.image} alt={`${service.title} Service`} fill
+                      <Image src={service.image} alt={`${service.title} Service`} fill sizes="(max-width: 1024px) 100vw, 50vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105" />
                       <div className="absolute top-4 left-4 bg-teal-800/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
                         <Sparkles className="w-3 h-3 text-amber-300" />

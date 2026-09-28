@@ -18,16 +18,16 @@ export const siteConfig = {
   coverage: "Pan India",
 
   /** Primary business email */
-  email: "info@aaravaircon.com",
+  email: "[EMAIL_ADDRESS]",
 
   /** Display-formatted phone number (with country code & spaces) */
-  phone: "+91 98765 43210",
+  phone: "+91 8808231587",
 
   /** Raw phone for tel: links (no spaces) */
-  phoneRaw: "+919876543210",
+  phoneRaw: "+918808231587",
 
   /** WhatsApp number (with country code, no "+" prefix) */
-  whatsapp: "919876543210",
+  whatsapp: "918808231587",
 
   /** Canonical website URL (no trailing slash) */
   website: "https://aaravaircon.com",

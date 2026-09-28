@@ -36,7 +36,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Apartments, villas, offices, clinic rooms, and modern studio spaces.",
-    image: "/services/split-ac-repair.svg",
+    image: "/services/split-ac-repair.jpg",
   },
   {
     id: "window-ac-repair",
@@ -55,7 +55,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Compact master bedrooms, study rooms, single executive cabins, and rental homes.",
-    image: "/services/window-ac-repair.svg",
+    image: "/services/window-ac-repair.jpg",
   },
   {
     id: "ac-installation",
@@ -74,7 +74,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "New home setups, renovation sites, corporate workspace fit-outs, and retail shops.",
-    image: "/services/ac-installation.svg",
+    image: "/services/ac-installation.jpg",
   },
   {
     id: "ac-uninstallation",
@@ -93,7 +93,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Tenants moving homes, office relocations, facade painting, and building renewals.",
-    image: "/services/ac-uninstallation.svg",
+    image: "/services/ac-uninstallation.jpg",
   },
   {
     id: "gas-refilling",
@@ -112,7 +112,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Units exhibiting ice formation on cooling coils, lukewarm air output, or sudden cooling drops.",
-    image: "/services/gas-refilling.svg",
+    image: "/services/gas-refilling.jpg",
   },
   {
     id: "chemical-deep-cleaning",
@@ -131,7 +131,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Units not cleaned for 6+ months, rooms with pets, kitchens, or high-pollution urban avenues.",
-    image: "/services/chemical-cleaning.svg",
+    image: "/services/chemical-cleaning.jpg",
   },
   {
     id: "pcb-compressor-repair",
@@ -150,7 +150,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Blinking indicator LEDs, error codes (E1, E6, F3, etc.), or total non-power startup.",
-    image: "/services/pcb-repair.svg",
+    image: "/services/pcb-repair.jpg",
   },
   {
     id: "water-leakage-repair",
@@ -169,7 +169,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Water dripping from front panel, water pooling on flooring, or musty damp odors.",
-    image: "/services/leakage-repair.svg",
+    image: "/services/leakage-repair.jpg",
   },
   {
     id: "amc-service",
@@ -188,7 +188,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Homes, corporate offices, banks, retail outlets, educational centers, and showrooms.",
-    image: "/services/amc.svg",
+    image: "/services/amc.jpg",
   },
   {
     id: "commercial-ac-services",
@@ -207,7 +207,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Corporate parks, hotels, healthcare centers, server rooms, and banquet halls.",
-    image: "/services/commercial-ac.svg",
+    image: "/services/commercial-ac.jpg",
   },
   {
     id: "cassette-ac-service",
@@ -226,7 +226,7 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Conference rooms, fine dining restaurants, boutiques, and open-plan offices.",
-    image: "/services/cassette-ac.svg",
+    image: "/services/cassette-ac.jpg",
   },
   {
     id: "vrv-vrf-maintenance",
@@ -245,6 +245,6 @@ export const services: ServiceItem[] = [
     ],
     suitableFor:
       "Multi-floor commercial structures, luxury villas, institutions, and industrial offices.",
-    image: "/services/vrv-system.svg",
+    image: "/services/vrv-system.jpg",
   },
 ];

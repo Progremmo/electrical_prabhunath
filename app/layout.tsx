@@ -120,7 +120,7 @@ export default function RootLayout({
   }));
 
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`} data-scroll-behavior="smooth">
       <body className="min-h-full flex flex-col bg-slate-50 text-gray-900 selection:bg-teal-700 selection:text-white">
         <Navbar />
         <main className="flex-grow">{children}</main>

@@ -74,6 +74,49 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        
+        {/* LocalBusiness Schema.org JSON-LD for Local SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Aarav Aircon Services",
+              "image": "https://aaravaircon.com/images/hero-real.jpg",
+              "url": "https://aaravaircon.com",
+              "telephone": "+919876543210",
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Pan India Service Network",
+                "addressLocality": "India",
+                "addressRegion": "IN",
+                "addressCountry": "IN"
+              },
+              "description": "Professional AC repair, installation, gas refilling, chemical cleaning and AMC services available across Pan India for residential and commercial customers.",
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                  ],
+                  "opens": "08:00",
+                  "closes": "21:00"
+                }
+              ],
+              "sameAs": [
+                "https://aaravaircon.com"
+              ]
+            }),
+          }}
+        />
       </body>
     </html>
   );

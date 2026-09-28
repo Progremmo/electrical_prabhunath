@@ -24,6 +24,7 @@ export default function Footer() {
                   src={siteConfig.branding.logoDark}
                   alt={siteConfig.companyName}
                   fill
+                  sizes="192px"
                   className="object-contain"
                 />
               </div>

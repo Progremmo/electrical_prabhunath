@@ -61,11 +61,10 @@ export default function Navbar() {
 
       {/* Main Sticky Navbar */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-md py-3"
             : "bg-white border-b border-gray-100 py-4"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
@@ -82,6 +81,7 @@ export default function Navbar() {
                   alt={`${siteConfig.companyName} Logo`}
                   fill
                   priority
+                  sizes="(max-width: 640px) 176px, 208px"
                   className="object-contain"
                 />
               </div>
@@ -96,11 +96,10 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     id={`nav-link-${link.label.toLowerCase()}`}
-                    className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${
-                      active
+                    className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${active
                         ? "text-teal-700 bg-teal-50 shadow-xs"
                         : "text-gray-700 hover:text-teal-700 hover:bg-gray-50"
-                    }`}
+                      }`}
                   >
                     {link.label}
                   </Link>
@@ -155,11 +154,10 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
-                    active
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${active
                       ? "text-teal-800 bg-teal-50/80 font-bold"
                       : "text-gray-700 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   <span>{link.label}</span>
                   <ArrowRight className="w-4 h-4 opacity-50" />

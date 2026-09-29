@@ -5,6 +5,7 @@ import Image from "next/image";
 import SectionTitle from "@/components/SectionTitle";
 import { gallery, galleryCategories } from "@/config/gallery";
 import { siteConfig } from "@/config/site";
+import { galleryContent } from "@/content/gallery";
 import { Camera, Eye, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { pageMetadata } from "@/content/metadata";
@@ -24,13 +25,13 @@ export default function GalleryPage() {
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-teal-200 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
-            Workmanship & Field Execution
+            {galleryContent.header.badge}
           </span>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
-            Our Project & Work Gallery
+            {galleryContent.header.title}
           </h1>
           <p className="text-teal-100/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Real snapshots from residential installations, commercial chillers, foam jet washes, and precision inverter board repairs executed across {siteConfig.coverage}.
+            {galleryContent.header.subtitle}
           </p>
         </div>
       </section>
@@ -95,13 +96,13 @@ export default function GalleryPage() {
         {/* Gallery bottom reassurance note */}
         <div className="mt-16 text-center bg-white rounded-2xl p-8 border border-gray-200/80 max-w-2xl mx-auto shadow-sm">
           <Camera className="w-8 h-8 text-teal-700 mx-auto mb-2" />
-          <h4 className="text-lg font-bold text-gray-900">Standardized Quality on Every Visit</h4>
+          <h4 className="text-lg font-bold text-gray-900">{galleryContent.reassurance.title}</h4>
           <p className="text-xs sm:text-sm text-gray-600 mt-1 leading-relaxed">
-            Every technician is equipped with safety scaffolding, catch-bags to prevent indoor water splatters, and calibrated digital refrigerant manifolds.
+            {galleryContent.reassurance.description}
           </p>
           <div className="mt-4">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-teal-700 text-white font-bold text-xs sm:text-sm px-6 py-2.5 rounded-xl hover:bg-teal-800 transition-colors">
-              <span>Book An HVAC Inspection Today</span>
+              <span>{galleryContent.reassurance.ctaText}</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

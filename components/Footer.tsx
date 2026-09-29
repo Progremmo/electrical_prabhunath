@@ -61,6 +61,8 @@ export default function Footer() {
                 { label: "About Us", href: "/about" },
                 { label: "Services", href: "/services" },
                 { label: "Project Gallery", href: "/gallery" },
+                { label: "Terms & Conditions", href: "/terms" },
+                { label: "Privacy Policy", href: "/privacy" },
                 { label: "Contact Us", href: "/contact" },
               ].map((link) => (
                 <li key={link.href}>
@@ -117,16 +119,22 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar — dynamic year */}
+        {/* Bottom bar — dynamic year & legal links */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
           <p>© {new Date().getFullYear()} {siteConfig.companyName}. All Rights Reserved.</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <Link href="/terms" className="hover:text-teal-400 transition-colors">
+              Terms & Conditions
+            </Link>
+            <span>•</span>
+            <Link href="/privacy" className="hover:text-teal-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="hidden md:inline">•</span>
             <span className="inline-flex items-center gap-1 text-gray-400">
               <ShieldCheck className="w-3.5 h-3.5 text-teal-500" />
               Verified HVAC Workmanship
             </span>
-            <span className="hidden md:inline">|</span>
-            <span>{siteConfig.tagline}</span>
           </div>
         </div>
       </div>

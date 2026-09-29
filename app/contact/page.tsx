@@ -4,6 +4,7 @@ import { Phone, MessageSquare, Mail, MapPin, Clock, ShieldCheck, CheckCircle2 } 
 import { siteConfig } from "@/config/site";
 import { contactConfig } from "@/config/contact";
 import { pageMetadata } from "@/content/metadata";
+import { contactContent } from "@/content/contact";
 
 export const metadata: Metadata = pageMetadata.contact;
 
@@ -18,13 +19,13 @@ export default function ContactPage() {
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-teal-200 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
-            Get In Touch
+            {contactContent.header.badge}
           </span>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
-            Contact {siteConfig.shortName}
+            {contactContent.header.title}
           </h1>
           <p className="text-teal-100/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Need urgent AC repair or planning an AMC setup? Speak directly with our dispatch engineers or request an instant free quote.
+            {contactContent.header.subtitle}
           </p>
         </div>
       </section>
@@ -35,11 +36,13 @@ export default function ContactPage() {
             <div className="bg-white rounded-3xl p-8 border border-gray-200/80 shadow-sm space-y-6">
               <div>
                 <span className="text-xs font-bold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-md">
-                  Direct Assistance
+                  {contactContent.directAssistance.badge}
                 </span>
-                <h2 className="text-2xl font-black text-gray-900 mt-2">Reach Our Dispatch Team</h2>
+                <h2 className="text-2xl font-black text-gray-900 mt-2">
+                  {contactContent.directAssistance.title}
+                </h2>
                 <p className="text-sm text-gray-600 mt-1">
-                  We are available round the clock to ensure you never have to endure a breakdown in peak weather.
+                  {contactContent.directAssistance.subtitle}
                 </p>
               </div>
 

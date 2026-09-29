@@ -27,4 +27,12 @@ export const pageMetadata = {
     title: `Contact Us`,
     description: `Contact ${siteConfig.companyName} for quick AC repair, installation, and AMC quotes across ${siteConfig.coverage}. Doorstep technician support within 60-90 minutes.`,
   },
+  terms: {
+    title: `Terms & Conditions`,
+    description: `Terms and conditions for air conditioning repair, installation, servicing, and AMC contracts provided by ${siteConfig.companyName}.`,
+  },
+  privacy: {
+    title: `Privacy Policy`,
+    description: `Privacy policy detailing how ${siteConfig.companyName} collects, protects, and handles your personal data, service requests, and communications.`,
+  },
 } as const;

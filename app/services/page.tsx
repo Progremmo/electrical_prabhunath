@@ -5,6 +5,7 @@ import SectionTitle from "@/components/SectionTitle";
 import { services } from "@/config/services";
 import { siteConfig } from "@/config/site";
 import { pageMetadata } from "@/content/metadata";
+import { servicesContent } from "@/content/services";
 import { CheckCircle2, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = pageMetadata.services;
@@ -17,13 +18,13 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-teal-200 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
-            Engineered HVAC Solutions
+            {servicesContent.header.badge}
           </span>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
-            Professional AC Services Across {siteConfig.coverage}
+            {servicesContent.header.title}
           </h1>
           <p className="text-teal-100/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Detailed diagnosis, genuine factory spares, and certified technicians for all residential and commercial air conditioning needs.
+            {servicesContent.header.subtitle}
           </p>
         </div>
       </section>
@@ -31,9 +32,9 @@ export default function ServicesPage() {
       {/* Services List */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
         <SectionTitle
-          badge="Detailed Catalog"
-          title="All Air Conditioner Service Specializations"
-          subtitle="Explore our comprehensive services below. Each service includes pre-repair diagnostics, transparent cost estimation, and guaranteed warranty protection."
+          badge={servicesContent.catalogSection.badge}
+          title={servicesContent.catalogSection.title}
+          subtitle={servicesContent.catalogSection.subtitle}
         />
 
         <div className="space-y-12">

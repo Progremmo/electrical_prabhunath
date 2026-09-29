@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { siteConfig } from "@/config/site";
 import { seoConfig } from "@/config/seo";
 import { contactConfig } from "@/config/contact";
@@ -125,6 +126,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
+        <FloatingWhatsApp />
 
         {/* Structured Data — LocalBusiness */}
         <script

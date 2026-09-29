@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Phone, Menu, X, ArrowRight, ShieldCheck } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { contactConfig } from "@/config/contact";
+import GoogleTranslateWidget from "@/components/GoogleTranslateWidget";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +49,10 @@ export default function Navbar() {
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs font-medium">
-            <span className="text-gray-300">{contactConfig.businessHours.topBarDisplay}</span>
+            <GoogleTranslateWidget />
+            <span className="hidden sm:inline text-gray-700">|</span>
+            <span className="hidden sm:inline text-gray-300">{contactConfig.businessHours.topBarDisplay}</span>
+            <span className="hidden sm:inline text-gray-700">|</span>
             <a
               href={`tel:${siteConfig.phoneRaw}`}
               className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1 font-semibold"

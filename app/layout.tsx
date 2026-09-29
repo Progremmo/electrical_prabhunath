@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { siteConfig } from "@/config/site";
 import { seoConfig } from "@/config/seo";
-import { contactConfig } from "@/config/contact";
 import { services } from "@/config/services";
 
 const inter = Inter({
@@ -27,19 +26,27 @@ export const metadata: Metadata = {
   creator: seoConfig.author,
   publisher: seoConfig.author,
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: siteConfig.website,
+    languages: {
+      "en-IN": siteConfig.website,
+      "hi-IN": `${siteConfig.website}/hi`,
+    },
+  },
   openGraph: {
     type: "website",
     locale: seoConfig.locale,
+    alternateLocale: seoConfig.alternateLocale,
     url: siteConfig.website,
     title: seoConfig.title,
     description: seoConfig.description,
-    siteName: siteConfig.companyName,
+    siteName: siteConfig.name,
     images: [
       {
         url: siteConfig.branding.ogImage,
         width: 1200,
         height: 630,
-        alt: `${siteConfig.companyName} — ${siteConfig.coverage}`,
+        alt: `${siteConfig.name} — Gurugram, Haryana`,
       },
     ],
   },
@@ -59,11 +66,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // Build JSON-LD from config — zero hardcoding
+  // Accurate LocalBusiness Schema adhering to verified Prabhunath Electricals & Contractor details
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: siteConfig.companyName,
+    name: siteConfig.name,
     image: `${siteConfig.website}${siteConfig.branding.ogImage}`,
     url: siteConfig.website,
     telephone: siteConfig.phoneRaw,
@@ -71,31 +78,35 @@ export default function RootLayout({
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: siteConfig.address.label,
-      addressLocality: "India",
-      addressRegion: "IN",
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.city,
+      addressRegion: siteConfig.state,
+      postalCode: siteConfig.address.postalCode,
       addressCountry: "IN",
     },
-    description: seoConfig.description,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: siteConfig.coordinates.latitude,
+      longitude: siteConfig.coordinates.longitude,
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday", "Tuesday", "Wednesday", "Thursday",
-          "Friday", "Saturday", "Sunday",
-        ],
-        opens: "08:00",
-        closes: "21:00",
+        dayOfWeek: siteConfig.businessHours.schemaDays,
+        opens: siteConfig.businessHours.opens,
+        closes: siteConfig.businessHours.closes,
       },
     ],
-    areaServed: { "@type": "Country", name: "India" },
-    sameAs: Object.values(siteConfig.social).filter(Boolean),
+    areaServed: {
+      "@type": "City",
+      name: siteConfig.city,
+    },
   };
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: siteConfig.companyName,
+    name: siteConfig.name,
     url: siteConfig.website,
     logo: `${siteConfig.website}${siteConfig.branding.logo}`,
     contactPoint: {
@@ -104,7 +115,6 @@ export default function RootLayout({
       contactType: "customer service",
       availableLanguage: ["English", "Hindi"],
     },
-    sameAs: Object.values(siteConfig.social).filter(Boolean),
   };
 
   const serviceSchemas = services.map((s) => ({
@@ -114,31 +124,34 @@ export default function RootLayout({
     description: s.description,
     provider: {
       "@type": "LocalBusiness",
-      name: siteConfig.companyName,
+      name: siteConfig.name,
     },
-    areaServed: { "@type": "Country", name: "India" },
+    areaServed: {
+      "@type": "City",
+      name: siteConfig.city,
+    },
     url: `${siteConfig.website}/services#${s.id}`,
   }));
 
   return (
     <html lang="en" className={`${inter.variable} h-full antialiased`} data-scroll-behavior="smooth">
-      <body className="min-h-full flex flex-col bg-slate-50 text-gray-900 selection:bg-teal-700 selection:text-white">
+      <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 selection:bg-amber-400 selection:text-slate-950">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
         <FloatingWhatsApp />
 
-        {/* Structured Data — LocalBusiness */}
+        {/* Structured Data — LocalBusiness (JSON-LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
-        {/* Structured Data — Organization */}
+        {/* Structured Data — Organization (JSON-LD) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        {/* Structured Data — Service (per service) */}
+        {/* Structured Data — Services (JSON-LD) */}
         {serviceSchemas.map((schema, i) => (
           <script
             key={i}

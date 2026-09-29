@@ -1,21 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="100%" height="100%" fill="none">
-  <!-- Symbol / Icon -->
-  <g transform="translate(10, 10)">
-    <!-- Base snowflake/fan rounded badge -->
-    <rect width="60" height="60" rx="16" fill="#0F766E"/>
-    <!-- Snowflake & Cooling Breeze lines -->
-    <path d="M30 12 L30 48 M12 30 L48 30" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
-    <path d="M17 17 L43 43 M17 43 L43 17" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>
-    <!-- Central cooling node -->
-    <circle cx="30" cy="30" r="5" fill="#F59E0B" />
-    <!-- Dynamic cool wind curve -->
-    <path d="M22 25 C26 22, 34 22, 38 25 M20 35 C25 38, 35 38, 40 35" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="logoShieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="logoBoltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Logo Mark (Shield & Lightning) -->
+  <g transform="translate(6, 6) scale(0.8125)">
+    <path d="M32 4L12 12V28C12 43 21 54 32 60C43 54 52 43 52 28V12L32 4Z" fill="url(#logoShieldGrad)" stroke="#38BDF8" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M22 24H26V32" stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="22" cy="24" r="1.5" fill="#60A5FA" opacity="0.8"/>
+    <path d="M42 24H38V32" stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+    <circle cx="42" cy="24" r="1.5" fill="#60A5FA" opacity="0.8"/>
+    <path d="M35 14L22 33H33L28 50L44 29H33L38 14H35Z" fill="url(#logoBoltGrad)"/>
   </g>
-  <!-- Text Brand -->
-  <text x="82" y="38" font-family="'Inter', -apple-system, sans-serif" font-size="22" font-weight="800" fill="#0F766E" letter-spacing="-0.5">
-    AARAV <tspan fill="#2563EB">AIRCON</tspan>
+
+  <!-- Typography: Primary Business Name -->
+  <text x="66" y="29" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="900" letter-spacing="-0.4">
+    PRABHUNATH
   </text>
-  <text x="83" y="56" font-family="'Inter', -apple-system, sans-serif" font-size="10.5" font-weight="600" fill="#64748B" letter-spacing="1.2">
-    SERVICES • PAN INDIA
+  <!-- Subtitle Tag -->
+  <text x="66" y="47" fill="#1E3A8A" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" letter-spacing="1.2">
+    ELECTRICALS &amp; CONTRACTOR
+  </text>
+  <!-- Location Pill -->
+  <rect x="238" y="16" width="76" height="18" rx="9" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1"/>
+  <text x="276" y="29" fill="#0F172A" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing="0.4">
+    GURUGRAM
   </text>
 </svg>

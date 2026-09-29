@@ -4,15 +4,25 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Phone, Menu, X, ArrowRight, ShieldCheck } from "lucide-react";
+import { Phone, Menu, X, ArrowRight, ShieldCheck, Languages } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { contactConfig } from "@/config/contact";
+import { commonContentEn } from "@/content/en/common";
+import { commonContentHi } from "@/content/hi/common";
 import GoogleTranslateWidget from "@/components/GoogleTranslateWidget";
 
-export default function Navbar() {
+interface NavbarProps {
+  currentLang?: "en" | "hi";
+}
+
+export default function Navbar({ currentLang = "en" }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  const isHindi = currentLang === "hi" || pathname?.startsWith("/hi");
+  const lang = isHindi ? "hi" : "en";
+  const common = isHindi ? commonContentHi : commonContentEn;
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -20,44 +30,77 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Compute clean alternate path for language toggle
+  let alternateLangPath = "/";
+  if (pathname) {
+    if (pathname.startsWith("/hi")) {
+      alternateLangPath = pathname.replace(/^\/hi/, "") || "/";
+    } else if (pathname.startsWith("/en")) {
+      alternateLangPath = "/hi" + (pathname.replace(/^\/en/, "") || "");
+    } else {
+      alternateLangPath = `/hi${pathname === "/" ? "" : pathname}`;
+    }
+  }
+
+  const prefix = lang === "hi" ? "/hi" : "";
+
   const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Contact", href: "/contact" },
+    { label: common.nav.home, href: prefix || "/" },
+    { label: common.nav.about, href: `${prefix}/about` },
+    { label: common.nav.services, href: `${prefix}/services` },
+    { label: common.nav.gallery, href: `${prefix}/gallery` },
+    { label: common.nav.contact, href: `${prefix}/contact` },
   ];
 
   const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
+    if (!pathname) return false;
+    if (href === "/" || href === "/hi") return pathname === href;
     return pathname.startsWith(href);
   };
 
   return (
     <>
       {/* Top Notification Strip */}
-      <div className="bg-gray-900 text-gray-300 text-xs py-2 px-4 border-b border-gray-800">
+      <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 text-emerald-400 font-medium">
+            <span className="inline-flex items-center gap-1.5 text-amber-400 font-semibold">
               <ShieldCheck className="w-3.5 h-3.5" />
-              {siteConfig.coverage} Certified HVAC Network
+              {siteConfig.name}
             </span>
-            <span className="hidden md:inline text-gray-600">|</span>
-            <span className="hidden md:inline text-gray-400">
-              Residential & Commercial Air Conditioning Care
+            <span className="hidden md:inline text-slate-600">|</span>
+            <span className="hidden md:inline text-slate-400">
+              {siteConfig.address.area}, {siteConfig.city}
             </span>
           </div>
+
           <div className="flex items-center gap-4 text-xs font-medium">
-            <GoogleTranslateWidget />
-            <span className="hidden sm:inline text-gray-700">|</span>
-            <span className="hidden sm:inline text-gray-300">{contactConfig.businessHours.topBarDisplay}</span>
-            <span className="hidden sm:inline text-gray-700">|</span>
+            {/* Google Translation Widget */}
+            <div className="hidden lg:block">
+              <GoogleTranslateWidget />
+            </div>
+
+            {/* Language Switcher Button */}
+            <Link
+              href={alternateLangPath}
+              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-amber-300 transition-colors border border-slate-700 font-bold"
+              aria-label="Switch Language / भाषा बदलें"
+            >
+              <Languages className="w-3.5 h-3.5" />
+              <span>{isHindi ? "English" : "हिन्दी"}</span>
+            </Link>
+
+            <span className="hidden sm:inline text-slate-700">|</span>
+            <span className="hidden sm:inline text-slate-300">
+              {siteConfig.businessHours.daysDisplay} ({siteConfig.businessHours.hoursDisplay})
+            </span>
+            <span className="hidden sm:inline text-slate-700">|</span>
             <a
-              href={`tel:${siteConfig.phoneRaw}`}
+              href={contactConfig.phone.href}
               className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1 font-semibold"
             >
-              <span>Emergency 24/7 Hotline</span>
+              <Phone className="w-3.5 h-3.5" />
+              <span>{siteConfig.phoneDisplay}</span>
             </a>
           </div>
         </div>
@@ -65,27 +108,28 @@ export default function Navbar() {
 
       {/* Main Sticky Navbar */}
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
+          isScrolled
             ? "bg-white/95 backdrop-blur-md shadow-md py-3"
-            : "bg-white border-b border-gray-100 py-4"
-          }`}
+            : "bg-white border-b border-slate-200 py-3.5"
+        }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link
-              href="/"
-              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-teal-600 rounded-lg p-1"
+              href={prefix || "/"}
+              className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-blue-800 rounded-lg p-1"
               id="navbar-logo"
-              aria-label={`${siteConfig.companyName} — Home`}
+              aria-label={`${siteConfig.name} — Home`}
             >
-              <div className="relative w-44 sm:w-52 h-11 transition-transform group-hover:scale-[1.02]">
+              <div className="relative w-56 sm:w-64 h-11 transition-transform group-hover:scale-[1.02]">
                 <Image
                   src={siteConfig.branding.logo}
-                  alt={`${siteConfig.companyName} Logo`}
+                  alt={`${siteConfig.name} Logo`}
                   fill
                   priority
-                  sizes="(max-width: 640px) 176px, 208px"
+                  sizes="(max-width: 640px) 224px, 256px"
                   className="object-contain"
                 />
               </div>
@@ -100,10 +144,11 @@ export default function Navbar() {
                     key={link.href}
                     href={link.href}
                     id={`nav-link-${link.label.toLowerCase()}`}
-                    className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 ${active
-                        ? "text-teal-700 bg-teal-50 shadow-xs"
-                        : "text-gray-700 hover:text-teal-700 hover:bg-gray-50"
-                      }`}
+                    className={`px-3.5 py-2 rounded-xl text-sm font-bold transition-all duration-200 ${
+                      active
+                        ? "text-blue-900 bg-blue-50/80 shadow-xs"
+                        : "text-slate-700 hover:text-blue-900 hover:bg-slate-50"
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -114,22 +159,28 @@ export default function Navbar() {
             {/* Desktop CTA Call Now */}
             <div className="hidden md:flex items-center gap-3">
               <a
-                href={`tel:${siteConfig.phoneRaw}`}
+                href={contactConfig.phone.href}
                 id="navbar-call-now-btn"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-teal-700 to-teal-800 hover:from-teal-800 hover:to-teal-900 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-slate-900 to-blue-900 hover:from-slate-800 hover:to-blue-800 text-white font-bold text-sm px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-95"
               >
-                <div className="w-7 h-7 rounded-lg bg-white/20 flex items-center justify-center">
-                  <Phone className="w-3.5 h-3.5 text-white animate-bounce" />
+                <div className="w-6 h-6 rounded-lg bg-amber-500 flex items-center justify-center text-slate-950">
+                  <Phone className="w-3.5 h-3.5" />
                 </div>
-                <span>Call Now</span>
+                <span>{common.nav.callNow}</span>
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu & Call Button */}
             <div className="flex md:hidden items-center gap-2">
+              <Link
+                href={alternateLangPath}
+                className="px-2 py-1 text-xs font-bold bg-slate-100 text-slate-800 rounded-lg border border-slate-300"
+              >
+                {isHindi ? "EN" : "हिन्दी"}
+              </Link>
               <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-teal-700 text-white shadow-sm"
+                href={contactConfig.phone.href}
+                className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-slate-900 text-amber-400 shadow-sm"
                 aria-label={`Call ${siteConfig.shortName}`}
               >
                 <Phone className="w-4 h-4" />
@@ -138,7 +189,7 @@ export default function Navbar() {
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 id="mobile-menu-toggle"
-                className="inline-flex items-center justify-center p-2 rounded-xl text-gray-700 hover:text-teal-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-600"
+                className="inline-flex items-center justify-center p-2 rounded-xl text-slate-700 hover:text-blue-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-800"
                 aria-expanded={mobileMenuOpen}
                 aria-label="Toggle navigation menu"
               >
@@ -150,7 +201,7 @@ export default function Navbar() {
 
         {/* Mobile Flyout Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-100 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl">
+          <div className="md:hidden border-t border-slate-100 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl">
             {navLinks.map((link) => {
               const active = isActive(link.href);
               return (
@@ -158,30 +209,31 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${active
-                      ? "text-teal-800 bg-teal-50/80 font-bold"
-                      : "text-gray-700 hover:bg-gray-50"
-                    }`}
+                  className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-semibold transition-colors ${
+                    active
+                      ? "text-blue-900 bg-blue-50/80 font-bold"
+                      : "text-slate-700 hover:bg-slate-50"
+                  }`}
                 >
                   <span>{link.label}</span>
                   <ArrowRight className="w-4 h-4 opacity-50" />
                 </Link>
               );
             })}
-            <div className="pt-4 border-t border-gray-100 flex flex-col gap-2.5">
+            <div className="pt-4 border-t border-slate-100 flex flex-col gap-2.5">
               <a
-                href={`tel:${siteConfig.phoneRaw}`}
-                className="flex items-center justify-center gap-2.5 w-full bg-teal-700 text-white font-semibold py-3 rounded-xl shadow-md text-center text-sm"
+                href={contactConfig.phone.href}
+                className="flex items-center justify-center gap-2.5 w-full bg-slate-900 text-white font-semibold py-3 rounded-xl shadow-md text-center text-sm"
               >
-                <Phone className="w-4 h-4" />
-                <span>Call {siteConfig.phone}</span>
+                <Phone className="w-4 h-4 text-amber-400" />
+                <span>{common.nav.callNow}: {siteConfig.phoneDisplay}</span>
               </a>
               <Link
-                href="/contact"
+                href={`${prefix}/contact`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-600 text-gray-950 font-bold py-3 rounded-xl shadow-xs text-center text-sm"
+                className="flex items-center justify-center gap-2 w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold py-3 rounded-xl shadow-xs text-center text-sm"
               >
-                <span>Request Free Quote</span>
+                <span>{common.nav.requestQuote}</span>
               </Link>
             </div>
           </div>

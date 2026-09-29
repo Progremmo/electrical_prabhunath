@@ -2,9 +2,7 @@ import { siteConfig } from "@/config/site";
 import { seoConfig } from "@/config/seo";
 
 /**
- * Page-Level Metadata Content — White-Label
- *
- * Used by the Next.js Metadata API in each route's page.tsx
+ * Page-Level Metadata Content for Prabhunath Electricals & Contractor
  */
 export const pageMetadata = {
   home: {
@@ -12,27 +10,27 @@ export const pageMetadata = {
     description: seoConfig.description,
   },
   about: {
-    title: `About Us`,
-    description: `Learn about ${siteConfig.companyName} — ${siteConfig.stats.experienceYears} years of delivering certified HVAC repair, installation, and AMC engineering across ${siteConfig.coverage}.`,
+    title: `About Us | ${siteConfig.name}`,
+    description: `Learn about ${siteConfig.name} — Reliable electrical contracting, wiring, and distribution panel solutions in Gurugram, Haryana.`,
   },
   services: {
-    title: `AC Repair, Installation & AMC Services`,
-    description: `Comprehensive HVAC air conditioning services across ${siteConfig.coverage}. Split AC, Window AC, Inverter PCB repair, Gas refilling, Chemical deep cleaning and Commercial AMC.`,
+    title: `Electrical Services & Contracting in Gurugram | ${siteConfig.name}`,
+    description: `Professional electrical wiring, DB panels, architectural lighting, and commercial contracting solutions in Gurugram by ${siteConfig.name}.`,
   },
   gallery: {
-    title: `Project Gallery`,
-    description: `View real project photos from ${siteConfig.companyName} — AC installation, repair, chemical cleaning, and commercial HVAC work across ${siteConfig.coverage}.`,
+    title: `Project Showcase & Work Gallery | ${siteConfig.name}`,
+    description: `View illustrative electrical and contracting installations from ${siteConfig.name} in Gurugram, Haryana.`,
   },
   contact: {
-    title: `Contact Us`,
-    description: `Contact ${siteConfig.companyName} for quick AC repair, installation, and AMC quotes across ${siteConfig.coverage}. Doorstep technician support within 60-90 minutes.`,
+    title: `Contact Us | ${siteConfig.name}`,
+    description: `Contact ${siteConfig.name} for reliable electrical services and contracting in Gurugram, Haryana. Direct phone: ${siteConfig.phoneDisplay}.`,
   },
   terms: {
-    title: `Terms & Conditions`,
-    description: `Terms and conditions for air conditioning repair, installation, servicing, and AMC contracts provided by ${siteConfig.companyName}.`,
+    title: `Terms & Conditions | ${siteConfig.name}`,
+    description: `Terms and conditions for electrical contracting, wiring, and site installations provided by ${siteConfig.name}.`,
   },
   privacy: {
-    title: `Privacy Policy`,
-    description: `Privacy policy detailing how ${siteConfig.companyName} collects, protects, and handles your personal data, service requests, and communications.`,
+    title: `Privacy Policy | ${siteConfig.name}`,
+    description: `Privacy policy detailing how ${siteConfig.name} protects your contact and site information.`,
   },
 } as const;

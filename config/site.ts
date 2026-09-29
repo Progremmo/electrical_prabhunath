@@ -1,66 +1,57 @@
 /**
- * Site Configuration — White-Label HVAC Branding
- *
- * This is the ONLY file a non-developer needs to edit to rebrand
- * the entire website for a new HVAC client.
+ * Site Configuration — Prabhunath Electricals & Contractor
+ * All business details are centralized here.
+ * Never hardcode business information directly inside UI components.
  */
 export const siteConfig = {
-  /** Full legal / trading company name */
-  companyName: "Aarav Aircon Services",
+  name: "Prabhunath Electricals & Contractor",
+  shortName: "Prabhunath Electricals",
+  tagline: "Reliable Electrical Solutions & Contracting Services",
 
-  /** Short version for tight UI spots (navbar badge, footer strip, etc.) */
-  shortName: "Aarav Aircon",
+  phone: "+919811068312",
+  phoneDisplay: "+91 9811068312",
+  phoneRaw: "+919811068312",
+  whatsapp: "919811068312",
 
-  /** One-liner below the logo or in hero badges */
-  tagline: "Fast, Reliable & Affordable AC Services",
+  email: "electricalprabhunath@gmail.com",
 
-  /** Geographic scope shown in hero, footer, schema, etc. */
-  coverage: "Pan India",
+  // Deployed or production URL. Dynamic QR code and metadata consume this.
+  website: "https://prabhunath-electricals.vercel.app",
 
-  /** Primary business email */
-  email: "airconaarav@gmail.com",
+  city: "Gurugram",
+  state: "Haryana",
+  country: "India",
 
-  /** Display-formatted phone number (with country code & spaces) */
-  phone: "+91 8808231587",
-
-  /** Raw phone for tel: links (no spaces) */
-  phoneRaw: "+918808231587",
-
-  /** WhatsApp number (with country code, no "+" prefix) */
-  whatsapp: "918808231587",
-
-  /** Canonical website URL (no trailing slash) */
-  website: "https://aaravaircon.com",
-
-  /** Physical or service-area address */
   address: {
-    label: "Pan India Service Network",
-    description:
-      "Serving Residential, Commercial & Industrial Clients Across India",
-    officeAddress: "Gata No 67A, Village Babhani, Uttar Pradesh 274001"
+    street: "512/20, Om Nagar Gali No. 3",
+    area: "Om Nagar, Sector 11",
+    city: "Gurugram",
+    state: "Haryana",
+    postalCode: "122001",
+    country: "India",
+    formatted: "512/20, Om Nagar Gali No. 3, Om Nagar, Sector 11, Gurugram, Haryana 122001, India",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=28.4504679,77.0211427",
+    mapsEmbedUrl: "https://maps.google.com/maps?q=28.4504679,77.0211427&hl=en&z=16&output=embed",
   },
 
-  /** Social media profile URLs (leave empty string if unused) */
-  social: {
-    facebook: "",
-    instagram: "",
-    linkedin: "",
-    youtube: "",
+  coordinates: {
+    latitude: 28.4504679,
+    longitude: 77.0211427,
   },
 
-  /** Key stats displayed on hero, about, etc. */
-  stats: {
-    experienceYears: "10+",
-    happyCustomers: "5,000+",
-    acInstalled: "2,500+",
-    coverageLabel: "Pan India",
+  businessHours: {
+    daysDisplay: "Monday – Sunday",
+    hoursDisplay: "8:00 AM – 9:00 PM",
+    schemaDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    opens: "08:00",
+    closes: "21:00",
   },
 
-  /** Branding file paths (relative to /public) */
   branding: {
-    logo: "/branding/logo-transparent.png",
-    logoDark: "/branding/logo-transparent.png",
-    favicon: "/branding/favicon.png",
+    logo: "/branding/logo.svg",
+    logoDark: "/branding/logo-dark.svg",
+    favicon: "/branding/favicon.svg",
+    logoMark: "/branding/logo-mark.svg",
     ogImage: "/branding/og-image.jpg",
   },
 } as const;

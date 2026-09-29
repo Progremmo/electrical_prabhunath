@@ -1,24 +1,21 @@
-import { siteConfig } from "@/config/site";
-
 /**
- * Gallery Page Content — White-Label Configuration
- * All header, badge, and informational note copy for the gallery page.
+ * Gallery Page Content — Prabhunath Electricals & Contractor
  */
 export const galleryContent = {
   header: {
-    badge: "Workmanship & Field Execution",
-    title: "Our Project & Work Gallery",
-    subtitle: `Real snapshots from residential installations, commercial chillers, foam jet washes, and precision inverter board repairs executed across ${siteConfig.coverage}.`,
+    badge: "Project & Work Showcase",
+    title: "Electrical & Contracting Gallery",
+    subtitle: `Illustrative representations of conduit installations, 3-phase distribution boards, profile lighting, and commercial contracting in Gurugram.`,
   },
   card: {
-    verifiedBadge: "Verified On-Site Workmanship",
-    qualityTag: "Quality Inspected",
+    verifiedBadge: "Quality Workmanship",
+    qualityTag: "Standard Workmanship",
     enquireText: "Enquire",
   },
   reassurance: {
-    title: "Standardized Quality on Every Visit",
+    title: "Standardized Quality & Safety",
     description:
-      "Every technician is equipped with safety scaffolding, catch-bags to prevent indoor water splatters, and calibrated digital refrigerant manifolds.",
-    ctaText: "Book An HVAC Inspection Today",
+      "All electrical work adheres to standard safety guidelines, FRLS wiring, calibrated circuit breakers, and proper earthing systems.",
+    ctaText: "Contact Us for Site Assessment",
   },
 } as const;

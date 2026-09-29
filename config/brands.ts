@@ -1,20 +1,14 @@
 /**
- * Brands Configuration — White-Label
+ * Supported Electrical Brands & Standards Configuration
+ * Well-known Indian electrical equipment & switchgear manufacturers.
  */
-export interface BrandItem {
-  name: string;
-  logo: string;
-}
-
-export const brands: BrandItem[] = [
-  { name: "Daikin", logo: "DAIKIN" },
-  { name: "LG", logo: "LG" },
-  { name: "Voltas", logo: "VOLTAS" },
-  { name: "Samsung", logo: "SAMSUNG" },
-  { name: "Hitachi", logo: "HITACHI" },
-  { name: "Blue Star", logo: "BLUE STAR" },
-  { name: "Carrier", logo: "CARRIER" },
-  { name: "Panasonic", logo: "PANASONIC" },
-  { name: "Lloyd", logo: "LLOYD" },
-  { name: "Whirlpool", logo: "WHIRLPOOL" },
+export const electricalBrands = [
+  { name: "Havells", category: "Wires & Switchgear" },
+  { name: "Schneider Electric", category: "MCB & Protection" },
+  { name: "Legrand", category: "Modular Switches & DB" },
+  { name: "Polycab", category: "FRLS Copper Cables" },
+  { name: "Anchor by Panasonic", category: "Modular Accessories" },
+  { name: "L&T", category: "Switchgear & Breakers" },
+  { name: "Finolex", category: "Cables & Conduits" },
+  { name: "Philips", category: "Lighting & Profiles" },
 ];

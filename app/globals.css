@@ -3,28 +3,30 @@
 @theme {
   --font-sans: var(--font-inter), system-ui, sans-serif;
 
-  --color-primary: #0F766E;
-  --color-primary-dark: #0d5f59;
-  --color-primary-light: #14b8a6;
-  --color-primary-50: #f0fdfa;
-  --color-primary-100: #ccfbf1;
+  --color-primary: #0F172A;
+  --color-primary-dark: #020617;
+  --color-primary-light: #1E293B;
 
-  --color-secondary: #2563EB;
-  --color-secondary-dark: #1d4ed8;
+  --color-secondary: #1E3A8A;
+  --color-secondary-dark: #172554;
+  --color-secondary-light: #2563EB;
 
   --color-accent: #F59E0B;
-  --color-accent-hover: #d97706;
+  --color-accent-hover: #D97706;
+
+  --color-success: #16A34A;
 
   --color-background-soft: #F8FAFC;
   --color-foreground-dark: #111827;
 }
 
 :root {
-  /* These variables can be dynamically updated via JS/config for full white-labeling */
-  --primary: #0F766E;
-  --primary-hover: #0d5f59;
-  --secondary: #2563EB;
+  /* Central theme variables consumed by white-label architecture */
+  --primary: #0F172A;
+  --primary-hover: #1E293B;
+  --secondary: #1E3A8A;
   --accent: #F59E0B;
+  --success: #16A34A;
   --bg-main: #F8FAFC;
   --text-main: #111827;
 }
@@ -57,39 +59,4 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
-}
-
-/* Google Translate Widget Styling */
-.goog-te-banner-frame.skiptranslate {
-  display: none !important;
-}
-
-body {
-  top: 0px !important;
-}
-
-#google_translate_element select {
-  background-color: #1f2937;
-  color: #f3f4f6;
-  border: 1px solid #374151;
-  border-radius: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.75rem;
-  cursor: pointer;
-  outline: none;
-  font-family: inherit;
-}
-
-#google_translate_element select:hover {
-  border-color: #0f766e;
-}
-
-.goog-logo-link,
-.goog-te-gadget span {
-  display: none !important;
-}
-
-.goog-te-gadget {
-  color: transparent !important;
-  font-size: 0px !important;
 }

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="boltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#F59E0B" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Protective Outer Shield representing Contractor Safety & Reliability -->
+  <path d="M32 4L12 12V28C12 43 21 54 32 60C43 54 52 43 52 28V12L32 4Z" fill="url(#shieldGrad)" stroke="#38BDF8" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Subtle Circuit Grid Accents -->
+  <path d="M22 24H26V32" stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="22" cy="24" r="1.5" fill="#60A5FA" opacity="0.8"/>
+  <path d="M42 24H38V32" stroke="#60A5FA" stroke-width="1.2" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="42" cy="24" r="1.5" fill="#60A5FA" opacity="0.8"/>
+
+  <!-- Prominent Electric Lightning Bolt & "P" Monogram Energy Form -->
+  <path d="M35 14L22 33H33L28 50L44 29H33L38 14H35Z" fill="url(#boltGrad)" filter="url(#glow)"/>
+</svg>

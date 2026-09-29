@@ -4,27 +4,32 @@ import Link from "next/link";
 import SectionTitle from "@/components/SectionTitle";
 import { services } from "@/config/services";
 import { siteConfig } from "@/config/site";
-import { pageMetadata } from "@/content/metadata";
-import { servicesContent } from "@/content/services";
-import { CheckCircle2, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
+import { servicesContentEn } from "@/content/en/services";
+import { CheckCircle2, ArrowRight, ShieldCheck, Zap } from "lucide-react";
 
-export const metadata: Metadata = pageMetadata.services;
+export const metadata: Metadata = {
+  title: "Electrical Services & Contracting",
+  description: `Professional electrical wiring, DB panels, lighting, and commercial contracting services across Gurugram by ${siteConfig.name}.`,
+};
 
 export default function ServicesPage() {
+  const { header, card } = servicesContentEn;
+
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Header Banner */}
-      <section className="bg-gradient-to-b from-teal-900 via-teal-800 to-gray-900 text-white py-16 sm:py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white py-16 sm:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:24px_24px] opacity-10" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-teal-200 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
-            {servicesContent.header.badge}
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 text-xs font-semibold uppercase tracking-wider mb-4 border border-white/10">
+            <Zap className="w-3.5 h-3.5 text-amber-400" />
+            {header.badge}
           </span>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4">
-            {servicesContent.header.title}
+            {header.title}
           </h1>
-          <p className="text-teal-100/90 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            {servicesContent.header.subtitle}
+          <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            {header.subtitle}
           </p>
         </div>
       </section>
@@ -32,68 +37,77 @@ export default function ServicesPage() {
       {/* Services List */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
         <SectionTitle
-          badge={servicesContent.catalogSection.badge}
-          title={servicesContent.catalogSection.title}
-          subtitle={servicesContent.catalogSection.subtitle}
+          badge="Configured Services"
+          title="Electrical Solutions & Contracting Portfolio"
+          subtitle="Explore our key capabilities for apartments, independent homes, retail outlets, and commercial establishments in Gurugram."
         />
 
         <div className="space-y-12">
           {services.map((service, index) => {
             const isReversed = index % 2 === 1;
             return (
-              <section key={service.id} id={service.id}
-                className="scroll-mt-28 bg-white rounded-3xl border border-gray-200/80 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
-                <div className={`grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10`}>
+              <section
+                key={service.id}
+                id={service.id}
+                className="scroll-mt-28 bg-white rounded-3xl border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-6 sm:p-10">
                   <div className={`lg:col-span-5 relative ${isReversed ? "lg:order-2" : "lg:order-1"}`}>
-                    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
-                      <Image src={service.image} alt={`${service.title} Service`} fill sizes="(max-width: 1024px) 100vw, 50vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-105" />
-                      <div className="absolute top-4 left-4 bg-teal-800/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md">
-                        <Sparkles className="w-3 h-3 text-amber-300" />
-                        <span>{siteConfig.coverage} Dispatch</span>
+                    <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-200 group">
+                      <Image
+                        src={service.image}
+                        alt={`${service.title} Service — Prabhunath Electricals`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-sm text-amber-400 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-md border border-slate-700">
+                        <Zap className="w-3 h-3" />
+                        <span>Gurugram Service</span>
                       </div>
                     </div>
                   </div>
 
                   <div className={`lg:col-span-7 space-y-5 ${isReversed ? "lg:order-1" : "lg:order-2"}`}>
                     <div className="flex items-center gap-3">
-                      <span className="text-xs font-extrabold text-teal-700 bg-teal-50 px-3 py-1 rounded-lg border border-teal-200">
+                      <span className="text-xs font-extrabold text-blue-900 bg-blue-50 px-3 py-1 rounded-lg border border-blue-200">
                         Service #{index + 1 < 10 ? `0${index + 1}` : index + 1}
                       </span>
-                      <span className="text-xs text-gray-500 font-medium">30-90 Days Warranty</span>
+                      <span className="text-xs text-slate-500 font-medium">Standards Compliant</span>
                     </div>
 
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">{service.title}</h2>
-                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{service.description}</p>
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                      {service.title}
+                    </h2>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                      {service.description}
+                    </p>
 
                     <div>
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-gray-800 mb-2.5">
-                        Key Service Inclusions & Benefits:
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-slate-800 mb-2.5">
+                        {card.inclusionsTitle}
                       </h3>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {service.benefits.map((benefit, bIdx) => (
-                          <div key={bIdx} className="flex items-start gap-2 text-xs sm:text-sm text-gray-700">
-                            <CheckCircle2 className="w-4 h-4 text-teal-600 shrink-0 mt-0.5" />
-                            <span>{benefit}</span>
+                        {service.highlights.map((highlight, hIdx) => (
+                          <div key={hIdx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
+                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                            <span>{highlight}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200/70 text-xs sm:text-sm text-gray-700">
-                      <span className="font-bold text-gray-900">Suitable For: </span>
-                      <span>{service.suitableFor}</span>
-                    </div>
-
                     <div className="pt-2 flex flex-wrap items-center gap-4">
-                      <Link href={`/contact?service=${encodeURIComponent(service.title)}`}
-                        className="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5">
-                        <span>Book {service.title}</span>
+                      <Link
+                        href={`/contact?service=${encodeURIComponent(service.title)}`}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-slate-900 to-blue-900 hover:from-slate-800 hover:to-blue-800 text-amber-400 font-bold text-sm px-6 py-3 rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5"
+                      >
+                        <span>{card.bookCta}</span>
                         <ArrowRight className="w-4 h-4" />
                       </Link>
-                      <span className="text-xs text-gray-500 flex items-center gap-1">
-                        <ShieldCheck className="w-4 h-4 text-teal-600" />
-                        Fixed rate card • Upfront approval
+                      <span className="text-xs text-slate-500 flex items-center gap-1">
+                        <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                        <span>Safety Focused • Transparent Consultation</span>
                       </span>
                     </div>
                   </div>

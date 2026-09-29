@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.website;
   const lastModified = new Date();
 
-  const routes = [
+  const englishRoutes = [
     "",
     "/about",
     "/services",
@@ -21,12 +21,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  const serviceRoutes = services.map((service) => ({
-    url: `${baseUrl}/services#${service.id}`,
+  const hindiRoutes = [
+    "/hi",
+    "/hi/about",
+    "/hi/services",
+    "/hi/gallery",
+    "/hi/contact",
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
     lastModified,
     changeFrequency: "weekly" as const,
-    priority: 0.7,
+    priority: 0.8,
   }));
 
-  return [...routes, ...serviceRoutes];
+  const englishServiceRoutes = services
+    .filter((s) => s.enabled)
+    .map((service) => ({
+      url: `${baseUrl}/services/${service.slug}`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
+
+  const hindiServiceRoutes = services
+    .filter((s) => s.enabled)
+    .map((service) => ({
+      url: `${baseUrl}/hi/services/${service.slug}`,
+      lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
+
+  return [
+    ...englishRoutes,
+    ...hindiRoutes,
+    ...englishServiceRoutes,
+    ...hindiServiceRoutes,
+  ];
 }

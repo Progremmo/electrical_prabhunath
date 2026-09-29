@@ -1,39 +1,31 @@
-import { siteConfig } from "./site";
+import { siteConfig } from "@/config/site";
 
 /**
- * Contact Configuration — White-Label
- *
- * The contact page reads exclusively from this file.
+ * Contact Configuration — Prabhunath Electricals & Contractor
+ * Centralized direct contact links, WhatsApp triggers, and coordinates.
  */
 export const contactConfig = {
   phone: {
-    display: siteConfig.phone,
+    display: siteConfig.phoneDisplay,
     raw: siteConfig.phoneRaw,
-    label: "Toll-Free & 24/7 Emergency Line",
+    href: `tel:${siteConfig.phoneRaw}`,
   },
   whatsapp: {
-    display: siteConfig.phone,
-    raw: siteConfig.whatsapp,
-    label: "WhatsApp Quick Booking",
-    sublabel: "Send photos/video of fault for fast estimation",
-    defaultMessage: `Hello ${siteConfig.companyName}, I would like to request an AC service booking.`,
+    number: siteConfig.whatsapp,
+    href: `https://wa.me/${siteConfig.whatsapp}`,
+    defaultMessage: `Hello Prabhunath Electricals & Contractor, I would like to inquire about your electrical services in Gurugram.`,
+    getHref: (customMessage?: string) =>
+      `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+        customMessage || `Hello Prabhunath Electricals & Contractor, I would like to inquire about your electrical services in Gurugram.`
+      )}`,
   },
   email: {
     address: siteConfig.email,
-    label: "Email Helpdesk",
-    sublabel: "Corporate AMC & enterprise enquiries",
+    href: `mailto:${siteConfig.email}`,
   },
-  address: {
-    label: siteConfig.address.label,
-    description: siteConfig.address.description,
-  },
-  businessHours: {
-    display: "Monday – Sunday: 8:00 AM – 9:00 PM",
-    emergency: "Emergency breakdown dispatch operates 24/7",
-    topBarDisplay: "Mon - Sun: 8:00 AM - 9:00 PM",
-  },
-  guarantees: [
-    "30 to 90 Days Workmanship Guarantee",
-    "Transparent Price Approval Before Repair Starts",
-  ],
+  address: siteConfig.address,
+  businessHours: siteConfig.businessHours,
+  coordinates: siteConfig.coordinates,
 } as const;
+
+export type ContactConfig = typeof contactConfig;

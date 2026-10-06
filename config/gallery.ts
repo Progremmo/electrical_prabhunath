@@ -1,96 +1,80 @@
 /**
- * Gallery Configuration — White-Label
- *
- * Images should be placed in /public/gallery/
+ * Gallery Configuration — Prabhunath Electricals & Contractor
+ * Illustrative electrical & contracting showcase categories.
+ * All paths correspond to vector SVG graphics in /public/gallery/.
  */
 export interface GalleryItem {
   id: string;
   title: string;
-  category: string;
+  titleHi: string;
+  category: "Wiring" | "Panel & DB" | "Lighting" | "Commercial" | "Earthing";
+  categoryHi: "वायरिंग" | "पैनल और डीबी" | "लाइटिंग" | "व्यावसायिक" | "अर्थिंग";
   image: string;
   description: string;
+  descriptionHi: string;
 }
 
-export const galleryCategories = [
-  "All",
-  "Installation",
-  "Repair",
-  "Cleaning",
-  "Commercial",
-  "AMC",
-] as const;
+export const galleryCategories = ["All", "Wiring", "Panel & DB", "Lighting", "Commercial", "Earthing"] as const;
 
 export const gallery: GalleryItem[] = [
   {
     id: "g1",
-    title: "High-Rise Precision Split AC Installation",
-    category: "Installation",
-    image: "/gallery/install-1.jpg",
-    description:
-      "Laser-aligned outdoor bracket mounting with insulated copper piping and vibration dampeners.",
+    title: "Concealed Wall Conduit & Circuit Routing",
+    titleHi: "कंसील्ड वॉल कंड्यूट और सर्किट पाइपिंग",
+    category: "Wiring",
+    categoryHi: "वायरिंग",
+    image: "/gallery/gallery-wiring.jpg",
+    description: "Laser-aligned PVC conduit channel routing with heavy-gauge junction boxes for residential apartment.",
+    descriptionHi: "अपार्टमेंट के लिए सटीक कंसील्ड पाइपिंग और सुरक्षित जंक्शन बॉक्स लेआउट।",
   },
   {
     id: "g2",
-    title: "Inverter PCB Diagnostic & Bench Repair",
-    category: "Repair",
-    image: "/gallery/repair-real.jpg",
-    description:
-      "Component-level micro-soldering and capacitor replacement for a multi-split inverter unit.",
+    title: "3-Phase Distribution Board & RCCB Setup",
+    titleHi: "थ्री-फेज डिस्ट्रीब्यूशन बोर्ड और आरसीसीबी सेटअप",
+    category: "Panel & DB",
+    categoryHi: "पैनल और डीबी",
+    image: "/gallery/gallery-panel.jpg",
+    description: "Phase-balanced MCB layout with double-pole isolator and 30mA residual current protection.",
+    descriptionHi: "सटीक लोड डिस्ट्रीब्यूशन, आइसोलेटर और 30mA शॉक प्रोटेक्शन के साथ एमसीबी सेटअप।",
   },
   {
     id: "g3",
-    title: "High-Pressure Antibacterial Foam Jet Wash",
-    category: "Cleaning",
-    image: "/gallery/cleaning-1.jpg",
-    description:
-      "Complete evaporator coil deep cleaning using waterproof protective catchment bags.",
+    title: "Ceiling Profile LED & Cove Illumination",
+    titleHi: "सीलिंग प्रोफाइल एलईडी और कोव लाइटिंग",
+    category: "Lighting",
+    categoryHi: "लाइटिंग",
+    image: "/gallery/gallery-lighting.jpg",
+    description: "Warm architectural LED aluminum profile channels recessed into modern gypsum ceiling.",
+    descriptionHi: "आधुनिक फॉल्स सीलिंग में एल्युमिनियम प्रोफाइल और वार्म एलईडी स्ट्रिप्स का संयोजन।",
   },
   {
     id: "g4",
-    title: "Commercial Rooftop VRV Unit Overhaul",
+    title: "Commercial Retail Shop Electrical Contracting",
+    titleHi: "व्यावसायिक रिटेल आउटलेट इलेक्ट्रिकल कॉन्ट्रैक्ट",
     category: "Commercial",
-    image: "/gallery/commercial-1.jpg",
-    description:
-      "Comprehensive multi-zone VRF system diagnostics and electronic expansion valve check.",
+    categoryHi: "व्यावसायिक",
+    image: "/gallery/gallery-commercial.jpg",
+    description: "Complete turnkey wiring, display spotlighting, and dedicated billing counter UPS connectivity.",
+    descriptionHi: "दुकान के लिए संपूर्ण वायरिंग, डिस्प्ले स्पॉटलाइटिंग और सुरक्षित यूपीएस पावर लाइनें।",
   },
   {
     id: "g5",
-    title: "Corporate Facility Annual Maintenance",
-    category: "AMC",
-    image: "/gallery/amc-1.jpg",
-    description:
-      "Quarterly preventative maintenance schedule for 30+ cassette AC units in a corporate headquarters.",
+    title: "Chemical Earthing Pit & Ground Rod Setup",
+    titleHi: "केमिकल अर्थिंग पिट और कॉपर रॉड सेटअप",
+    category: "Earthing",
+    categoryHi: "अर्थिंग",
+    image: "/gallery/gallery-earthing.jpg",
+    description: "Low-resistance earth pit with moisture-retentive chemical compound for complete building surge safety.",
+    descriptionHi: "कम रेजिस्टेंस वाला मानक केमिकल अर्थिंग पिट, उपकरणों की पूर्ण सुरक्षा हेतु।",
   },
   {
     id: "g6",
-    title: "R32 Refrigerant Weight Charging & Leak Seal",
-    category: "Repair",
-    image: "/gallery/gas-repair-1.jpg",
-    description:
-      "Nitrogen pressure leak detection and precision digital scale refrigerant charging.",
-  },
-  {
-    id: "g7",
-    title: "Ceiling Cassette Flush Clean & Drainage Unclog",
-    category: "Cleaning",
-    image: "/gallery/cassette-clean-1.jpg",
-    description:
-      "Condensate pump flushing and circular louver deep sanitize in a hospitality suite.",
-  },
-  {
-    id: "g8",
-    title: "Industrial Ducted AC System Commissioning",
-    category: "Commercial",
-    image: "/gallery/duct-commercial-1.jpg",
-    description:
-      "Static pressure balancing and duct airflow verification for manufacturing cleanroom.",
-  },
-  {
-    id: "g9",
-    title: "Residential Double Multi-Split Relocation",
-    category: "Installation",
-    image: "/gallery/relocate-1.jpg",
-    description:
-      "Zero gas loss refrigerant pump-down, safe uninstallation, and re-mounting in new residence.",
+    title: "Modular Switchboard Assembly & Point Termination",
+    titleHi: "मॉड्यूलर स्विचबोर्ड और पॉइंट टर्मिनेशन",
+    category: "Wiring",
+    categoryHi: "वायरिंग",
+    image: "/gallery/gallery-switchboard.jpg",
+    description: "Neatly grouped neutral, phase, and ground connections terminated into flame-retardant switch plates.",
+    descriptionHi: "फायर-रिटार्डेंट मॉड्यूलर प्लेट्स में सुरक्षित वायर टर्मिनेशन और क्लीन फिनिशिंग।",
   },
 ];

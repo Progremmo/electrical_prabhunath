@@ -1,18 +1,17 @@
 import { siteConfig } from "@/config/site";
 
 /**
- * Privacy Policy Content — White-Label Configuration
- * Edit this file to update any privacy practices, data handling, or security disclosures.
+ * Privacy Policy Content — Prabhunath Electricals & Contractor
  */
 export const privacyContent = {
-  lastUpdated: "September 29, 2026",
-  badge: "Data Protection & Security",
+  lastUpdated: "September 30, 2026",
+  badge: "Data Protection & Privacy",
   title: "Privacy Policy",
-  subtitle: `Your privacy and customer trust are essential to ${siteConfig.companyName}. This policy explains how we collect, store, utilize, and protect your personal information when booking our HVAC and AC services.`,
+  subtitle: `Your privacy and trust are paramount to ${siteConfig.name}. This policy explains how we collect and safeguard your information when you inquire about our electrical services.`,
 
   promise: {
-    title: "Our Privacy Promise",
-    description: "We will never sell, rent, or trade your personal phone number, location address, or contact details to third-party telemarketers or advertisers. Your data is strictly utilized for dispatching technicians and fulfilling your HVAC service requests.",
+    title: "Our Privacy Guarantee",
+    description: "We never sell, rent, or trade your phone number, email, or project address. Your details are solely utilized to respond to electrical service inquiries and coordinate site assessments in Gurugram.",
   },
 
   sections: [
@@ -20,23 +19,19 @@ export const privacyContent = {
       id: "collection",
       number: "1",
       title: "Information We Collect",
-      description: `When you interact with ${siteConfig.companyName} through our website, online quote request forms, WhatsApp booking, or direct phone inquiries, we may collect the following information:`,
+      description: `When you contact ${siteConfig.name} via phone, WhatsApp, or our website form, we may collect:`,
       cards: [
         {
-          title: "Contact & Identification",
-          desc: "Full name, mobile telephone number, and email address for communication and digital invoice delivery.",
+          title: "Contact Details",
+          desc: "Your name, mobile phone number, and email address to discuss your electrical project.",
         },
         {
-          title: "Premises & Service Location",
-          desc: "Complete physical address, apartment/flat number, landmarks, and city for field technician navigation.",
+          title: "Site Location",
+          desc: "Your residential or commercial address in Gurugram for scheduling on-site evaluation.",
         },
         {
-          title: "Equipment & Service Details",
-          desc: "AC brand (e.g. Daikin, Voltas, LG), system type (Split, Window, Cassette, VRV), tonnage, fault symptoms, and service history.",
-        },
-        {
-          title: "Technical Website Analytics",
-          desc: "Standard non-identifying telemetry (IP address, browser type, device resolution, pages viewed) to optimize website performance.",
+          title: "Scope & Specifications",
+          desc: "Descriptions of electrical wiring, panel setup, lighting fixtures, or fault diagnosis required.",
         },
       ],
     },
@@ -44,57 +39,23 @@ export const privacyContent = {
       id: "usage",
       number: "2",
       title: "How We Use Your Information",
-      description: "Your details are used strictly for legitimate HVAC service delivery, including:",
+      description: "Information provided is used strictly for legitimate contracting execution:",
       points: [
-        "<strong>Doorstep Technician Dispatch:</strong> Assigning certified local AC technicians and sharing navigation coordinates to arrive within your scheduled slot.",
-        "<strong>Diagnostic & Quotation Delivery:</strong> Sending itemized cost estimates, part replacement approvals, and GST invoices via SMS, WhatsApp, or Email.",
-        "<strong>Warranty & Service Logs:</strong> Maintaining service records to track 30-day rework guarantees and manufacturer spare part warranties.",
-        "<strong>Customer Support & Preventive Reminders:</strong> Following up on service satisfaction and notifying customers regarding recommended seasonal AMC filter flushes.",
+        "Coordinating site visits and electrical requirement discussions.",
+        "Delivering work estimates, point schedules, and project updates via WhatsApp or direct call.",
+        "Maintaining work records for ongoing customer coordination.",
       ],
     },
     {
-      id: "protection",
+      id: "security",
       number: "3",
-      title: "Data Protection & Information Security",
-      description: "We enforce industry-standard technical and operational security controls to safeguard your data against unauthorized access, loss, or misuse:",
-      points: [
-        "<strong>SSL/TLS Encryption:</strong> All data submitted through our website forms is encrypted using 256-bit HTTPS protocols.",
-        "<strong>Restricted Technician Access:</strong> Service engineers only receive the customer address and contact number needed to fulfill the active work order.",
-        "<strong>Zero Payment Storage:</strong> We do not store or process debit/credit card CVVs or bank PINs on our servers. All digital payments are processed directly through certified RBI-regulated payment gateways and UPI apps.",
-      ],
-    },
-    {
-      id: "sharing",
-      number: "4",
-      title: "Information Sharing & Third Parties",
-      description: "We do not sell, rent, or monetize your contact records. Information may only be shared with:",
-      points: [
-        "<strong>Assigned Field Technicians:</strong> For doorstep service attendance and client coordination.",
-        "<strong>Communication Service Providers:</strong> Reliable SMS, WhatsApp Business API, and transactional email gateways to deliver booking confirmations.",
-        "<strong>Legal & Regulatory Authorities:</strong> Only when strictly mandated by applicable laws, statutory court orders, or taxation audits.",
-      ],
-    },
-    {
-      id: "cookies",
-      number: "5",
-      title: "Cookies & Browsing Analytics",
-      description: "Our website uses basic functional cookies and privacy-respecting analytics tools to understand user flow, maintain session stability, and improve page loading speeds. You may configure your web browser settings to block or delete cookies at any time without hindering essential site functionality.",
-    },
-    {
-      id: "rights",
-      number: "6",
-      title: "Your Data Rights & Control",
-      description: "As our customer, you have full control over your personal information:",
-      points: [
-        "<strong>Access & Correction:</strong> You can request a copy of your stored service history or update incorrect contact information.",
-        "<strong>Data Erasure:</strong> You may request the deletion of your customer record from our marketing lists at any time by contacting us.",
-        "<strong>Opt-Out:</strong> You can unsubscribe from non-essential promotional communications or service reminder messages with one click.",
-      ],
+      title: "Information Security",
+      description: "We protect all communication channels and restrict access to contact details solely to authorized technicians fulfilling the requested electrical work.",
     },
   ],
 
   contactSection: {
-    title: "Privacy Officer & Contact Information",
-    description: "For privacy-related questions, data access requests, or policy feedback, please reach out to us:",
+    title: "Privacy Inquiries",
+    description: "If you have any questions about data handling, reach out to us directly:",
   },
 } as const;

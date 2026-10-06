@@ -1,0 +1,35 @@
+export const contactContentEn = {
+  header: {
+    badge: "Contact & Location",
+    title: "Contact Prabhunath Electricals & Contractor",
+    subtitle:
+      "Have an electrical requirement, project tender, or need a site assessment in Gurugram? Get in touch with us directly via phone, WhatsApp, or through the contact form.",
+  },
+  info: {
+    title: "Prabhunath Electricals & Contractor",
+    subtitle: "Direct contact and office details for prompt coordination.",
+    addressTitle: "Office Address",
+    phoneTitle: "Phone / Direct Call",
+    whatsappTitle: "WhatsApp Message",
+    emailTitle: "Email Address",
+    hoursTitle: "Business Hours",
+    directionsCta: "Get Directions on Google Maps",
+  },
+  form: {
+    title: "Send An Enquiry",
+    subtitle: "Fill out the form below with your electrical requirements. We will review and respond promptly.",
+    nameLabel: "Your Name",
+    namePlaceholder: "Enter your full name",
+    phoneLabel: "Phone Number",
+    phonePlaceholder: "Enter 10-digit mobile number",
+    emailLabel: "Email Address",
+    emailPlaceholder: "name@example.com (optional)",
+    serviceLabel: "Service Required",
+    servicePlaceholder: "Select or specify service",
+    messageLabel: "Project Details / Message",
+    messagePlaceholder: "Briefly describe your electrical requirements, location, or scope of work...",
+    submitButton: "Send Enquiry via WhatsApp",
+    callInstead: "Prefer calling directly?",
+    successMessage: "Thank you! Redirecting to WhatsApp to send your inquiry details directly...",
+  },
+};

@@ -1,27 +1,29 @@
 import React from "react";
-import { brands } from "@/config/brands";
+import { electricalBrands } from "@/config/brands";
+import { Zap } from "lucide-react";
 
 export default function Brands() {
   return (
-    <section className="py-14 bg-white border-b border-gray-100">
+    <section className="py-12 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-8">
-          <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-gray-400">
-            Multi-Brand Specialists • We Service & Install All Leading AC Manufacturers
+        <div className="text-center mb-6">
+          <p className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-slate-500">
+            <Zap className="w-3.5 h-3.5 text-amber-500" />
+            <span>Standard Compatible Switchgear &amp; Quality Cable Materials</span>
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 items-center">
-          {brands.map((brand) => (
+        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3 items-center">
+          {electricalBrands.map((brand) => (
             <div
               key={brand.name}
-              className="group flex flex-col items-center justify-center p-4 h-20 rounded-xl bg-slate-50/80 hover:bg-white border border-slate-100 hover:border-teal-200 transition-all duration-300 hover:shadow-md cursor-default"
+              className="flex flex-col items-center justify-center p-3 h-18 rounded-xl bg-slate-50 border border-slate-200/80 transition-all duration-200 hover:border-blue-900 hover:shadow-xs text-center"
             >
-              <span className="font-extrabold text-base tracking-wider text-gray-400 group-hover:text-teal-700 transition-colors uppercase">
-                {brand.logo}
+              <span className="font-black text-sm tracking-wide text-slate-800">
+                {brand.name}
               </span>
-              <span className="text-[10px] text-gray-400 opacity-60 group-hover:opacity-100 transition-opacity">
-                Certified Spares
+              <span className="text-[10px] text-slate-500 mt-0.5 line-clamp-1">
+                {brand.category}
               </span>
             </div>
           ))}

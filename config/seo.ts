@@ -1,29 +1,29 @@
-import { siteConfig } from "./site";
+import { siteConfig } from "@/config/site";
 
 /**
- * SEO Configuration — White-Label Metadata
- *
- * All Next.js Metadata API values are derived from this file +
- * siteConfig so zero hardcoding is needed inside page files.
+ * SEO & Local SEO Configuration for Gurugram, Haryana
+ * Natural keyword alignment without keyword stuffing or unverified claims.
  */
 export const seoConfig = {
-  title: `${siteConfig.companyName} | AC Repair & Installation Across ${siteConfig.coverage}`,
-  titleTemplate: `%s | ${siteConfig.companyName}`,
-  description: `Professional AC repair, installation, gas refilling, chemical cleaning and AMC services available across ${siteConfig.coverage} for residential and commercial customers.`,
-  keywords: [
-    "AC repair",
-    "AC installation",
-    "Gas refilling",
-    "Split AC repair",
-    "Window AC repair",
-    "Commercial AC maintenance",
-    "AC AMC services",
-    "Chemical jet wash",
-    `${siteConfig.coverage} AC service`,
-    siteConfig.companyName,
-  ],
+  title: "Prabhunath Electricals & Contractor | Electrical Services in Gurugram",
+  titleTemplate: `%s | ${siteConfig.name}`,
+  description:
+    "Prabhunath Electricals & Contractor provides professional electrical and contracting solutions in Gurugram, Haryana. Contact us for reliable electrical service and contracting requirements.",
   canonical: siteConfig.website,
-  author: siteConfig.companyName,
-  robots: "index, follow",
+  author: siteConfig.name,
   locale: "en_IN",
+  alternateLocale: "hi_IN",
+  keywords: [
+    "Electrical contractor in Gurugram",
+    "Electrician in Gurugram",
+    "Electrical services in Gurugram",
+    "Electrical contractor near me",
+    "Residential electrical services Gurugram",
+    "Commercial electrical contractor Gurugram",
+    "Sector 11 Gurugram electrician",
+    "Electrical wiring contractor Gurugram",
+  ],
+  ogImage: siteConfig.branding.ogImage,
 } as const;
+
+export type SeoConfig = typeof seoConfig;

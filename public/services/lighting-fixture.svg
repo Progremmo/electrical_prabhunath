@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+    <radialGradient id="electricGlow" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="400" rx="24" fill="url(#bg)" />
+  <rect width="600" height="400" rx="24" fill="url(#electricGlow)" />
+
+  <!-- Circuit grid pattern lines -->
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1.2">
+    <line x1="0" y1="80" x2="600" y2="80" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="280" x2="600" y2="280" />
+    <line x1="120" y1="0" x2="120" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="480" y1="0" x2="480" y2="400" />
+  </g>
+
+  <!-- Central Technical Graphic Container -->
+  <g transform="translate(420, 80) scale(1.4)">
+    <path d="M40 15 C26 15 22 26 22 35 C22 42 28 47 28 53 H52 C52 47 58 42 58 35 C58 26 54 15 40 15 Z" fill="#FEF08A" stroke="#F59E0B" stroke-width="2.5"/>
+               <rect x="32" y="55" width="16" height="6" rx="2" fill="#94A3B8"/>
+               <line x1="40" y1="5" x2="40" y2="10" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+               <line x1="18" y1="18" x2="22" y2="22" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+               <line x1="62" y1="18" x2="58" y2="22" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Tag Pill -->
+  <rect x="40" y="210" width="160" height="30" rx="15" fill="#F59E0B" />
+  <text x="120" y="230" fill="#0F172A" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900" text-anchor="middle" letter-spacing="0.8">
+    MODERN LIGHTING
+  </text>
+
+  <!-- Titles -->
+  <text x="40" y="285" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800">
+    Architectural & Functional Lighting
+  </text>
+  <text x="40" y="320" fill="#CBD5E1" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500">
+    False Ceiling Profiles, LEDs & Chandeliers
+  </text>
+
+  <!-- Location Indicator -->
+  <text x="40" y="360" fill="#60A5FA" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700">
+    📍 Sector 11, Gurugram • Prabhunath Electricals &amp; Contractor
+  </text>
+</svg>

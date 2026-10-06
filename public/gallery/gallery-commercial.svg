@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <radialGradient id="electricGlow" cx="70%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="400" rx="24" fill="url(#bg)" />
+  <rect width="600" height="400" rx="24" fill="url(#electricGlow)" />
+
+  <!-- Circuit grid pattern lines -->
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1.2">
+    <line x1="0" y1="80" x2="600" y2="80" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="280" x2="600" y2="280" />
+    <line x1="120" y1="0" x2="120" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="480" y1="0" x2="480" y2="400" />
+  </g>
+
+  <!-- Central Technical Graphic Container -->
+  <g transform="translate(420, 80) scale(1.4)">
+    <rect x="15" y="15" width="50" height="60" rx="4" fill="#1E293B" stroke="#94A3B8" stroke-width="2"/>
+               <rect x="23" y="25" width="8" height="8" fill="#F59E0B" rx="1"/>
+               <rect x="36" y="25" width="8" height="8" fill="#F59E0B" rx="1"/>
+               <rect x="49" y="25" width="8" height="8" fill="#F59E0B" rx="1"/>
+               <rect x="23" y="40" width="8" height="8" fill="#F59E0B" rx="1"/>
+               <rect x="36" y="40" width="8" height="8" fill="#F59E0B" rx="1"/>
+               <rect x="49" y="40" width="8" height="8" fill="#F59E0B" rx="1"/>
+               <rect x="34" y="57" width="12" height="18" fill="#60A5FA"/>
+  </g>
+
+  <!-- Tag Pill -->
+  <rect x="40" y="210" width="160" height="30" rx="15" fill="#F59E0B" />
+  <text x="120" y="230" fill="#0F172A" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="900" text-anchor="middle" letter-spacing="0.8">
+    COMMERCIAL SITE
+  </text>
+
+  <!-- Titles -->
+  <text x="40" y="285" fill="#FFFFFF" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="800">
+    Retail & Commercial Fitout
+  </text>
+  <text x="40" y="320" fill="#CBD5E1" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="500">
+    Turnkey Power Outlets & Cable Trays
+  </text>
+
+  <!-- Location Indicator -->
+  <text x="40" y="360" fill="#60A5FA" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700">
+    📍 Sector 11, Gurugram • Prabhunath Electricals &amp; Contractor
+  </text>
+</svg>

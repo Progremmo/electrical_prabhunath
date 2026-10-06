@@ -92,6 +92,8 @@ export default function Footer({ currentLang = "en" }: FooterProps) {
                 { label: common.nav.services, href: `${prefix}/services` },
                 { label: common.nav.gallery, href: `${prefix}/gallery` },
                 { label: common.nav.contact, href: `${prefix}/contact` },
+                { label: common.footer.termsText, href: "/terms" },
+                { label: common.footer.privacyText, href: "/privacy" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link
@@ -176,16 +178,29 @@ export default function Footer({ currentLang = "en" }: FooterProps) {
           </div>
         </div>
 
-        {/* Bottom bar — dynamic year */}
+        {/* Bottom bar — dynamic year & legal compliance links */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>© {new Date().getFullYear()} {siteConfig.name}. {common.footer.rightsReserved}</p>
-          <div className="flex items-center gap-6">
+
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <Link
+              href="/terms"
+              className="text-slate-400 hover:text-amber-400 transition-colors font-medium underline-offset-4 hover:underline"
+            >
+              {common.footer.termsText}
+            </Link>
+            <span className="text-slate-700">|</span>
+            <Link
+              href="/privacy"
+              className="text-slate-400 hover:text-amber-400 transition-colors font-medium underline-offset-4 hover:underline"
+            >
+              {common.footer.privacyText}
+            </Link>
+            <span className="hidden sm:inline text-slate-700">|</span>
             <span className="inline-flex items-center gap-1 text-slate-400">
               <ShieldCheck className="w-3.5 h-3.5 text-amber-500" />
               {siteConfig.city}, {siteConfig.state}
             </span>
-            <span className="hidden md:inline text-slate-700">|</span>
-            <span className="text-slate-400">{siteConfig.tagline}</span>
           </div>
         </div>
       </div>

@@ -109,7 +109,7 @@ export default function Hero({ currentLang = "en" }: HeroProps) {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-800">
                 <div className="relative w-full aspect-[4/3]">
                   <Image
-                    src="/hero/hero-electrical.svg"
+                    src="/hero/hero-electrical.jpg"
                     alt={`${siteConfig.name} — Electrical & Contracting Services in Gurugram`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"

@@ -61,45 +61,38 @@ export default function Navbar({ currentLang = "en" }: NavbarProps) {
   return (
     <>
       {/* Top Notification Strip */}
-      <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 text-amber-400 font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              {siteConfig.name}
+      <div className="relative z-60 bg-slate-950 text-slate-300 text-xs py-2 px-3 sm:px-4 border-b border-slate-800/80">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-y-2 gap-x-4">
+          {/* Brand & Location */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 text-amber-400 font-bold tracking-tight">
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
+              <span>{siteConfig.shortName}</span>
             </span>
-            <span className="hidden md:inline text-slate-600">|</span>
-            <span className="hidden md:inline text-slate-400">
+            <span className="text-slate-600 hidden xs:inline">•</span>
+            <span className="hidden sm:inline text-slate-400">
               {siteConfig.address.area}, {siteConfig.city}
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-xs font-medium">
-            {/* Google Translation Widget */}
-            <div className="hidden lg:block">
+          {/* Right Action & Info Hub */}
+          <div className="flex items-center gap-2.5 sm:gap-3.5 text-xs font-medium ml-auto sm:ml-0 flex-wrap">
+            {/* Unified Language Select Dropdown */}
+            <div className="flex items-center">
               <GoogleTranslateWidget />
             </div>
 
-            {/* Language Switcher Button */}
-            <Link
-              href={alternateLangPath}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-800 hover:bg-slate-700 text-amber-300 transition-colors border border-slate-700 font-bold"
-              aria-label="Switch Language / भाषा बदलें"
-            >
-              <Languages className="w-3.5 h-3.5" />
-              <span>{isHindi ? "English" : "हिन्दी"}</span>
-            </Link>
-
-            <span className="hidden sm:inline text-slate-700">|</span>
-            <span className="hidden sm:inline text-slate-300">
+            <span className="hidden lg:inline text-slate-700">|</span>
+            <span className="hidden lg:inline text-slate-400">
               {siteConfig.businessHours.daysDisplay} ({siteConfig.businessHours.hoursDisplay})
             </span>
-            <span className="hidden sm:inline text-slate-700">|</span>
+
+            <span className="text-slate-700 hidden sm:inline">|</span>
             <a
               href={contactConfig.phone.href}
-              className="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1 font-semibold"
+              className="text-amber-400 hover:text-amber-300 transition-colors inline-flex items-center gap-1 font-bold tracking-tight text-[11px] sm:text-xs"
             >
-              <Phone className="w-3.5 h-3.5" />
+              <Phone className="w-3.5 h-3.5 shrink-0" />
               <span>{siteConfig.phoneDisplay}</span>
             </a>
           </div>

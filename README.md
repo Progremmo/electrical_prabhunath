@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prabhunath Electricals
 
-## Getting Started
+## 1\. Project Overview
 
-First, run the development server:
+This repository contains the web application for **Prabhunath Electricals**. It is a modern, responsive frontend application built to showcase products/services and provide information to customers.
+
+## 2\. Architecture & Tech Stack
+
+The project is built on a modern JavaScript/TypeScript stack, optimized for performance and developer experience.
+
+### Core Technologies
+
+*   **Framework:** [Next.js 16](https://nextjs.org/) (App Router paradigm)
+*   **UI Library:** [React 19](https://react.dev/)
+*   **Styling:** [Tailwind CSS v4](https://tailwindcss.com/) for utility-first styling
+*   **Icons:** [Lucide React](https://lucide.dev/)
+*   **Language:** [TypeScript](https://www.typescriptlang.org/) for static type checking
+
+## 3\. Project Structure
+
+The repository follows a standard Next.js App Router structure:
+
+```
+/
+├── app/              # Next.js App Router (pages, layouts, API routes)
+├── components/       # Reusable React components
+├── config/           # Application configuration files
+├── content/          # Static content or markdown data
+├── lib/              # Utility functions and shared logic
+├── public/           # Static assets (images, fonts, etc.)
+├── scripts/          # Utility scripts (e.g., generate-assets.js)
+├── package.json      # Dependencies and NPM scripts
+└── next.config.ts    # Next.js configuration
+```
+
+## 4\. Prerequisites
+
+Before setting up the project locally, ensure you have the following installed:
+
+*   **Node.js** (v20+ recommended)
+*   **npm** (comes with Node.js)
+
+## 5\. Getting Started (Commands)
+
+Follow these steps to run the project locally.
+
+### Installation
+
+Clone the repository and install the required dependencies:
+
+```bash
+npm install
+```
+
+### Development Server
+
+Start the local development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. The page will auto-update as you edit files in the `app/` directory.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Start Production Server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After building, you can start the production server to test the built app:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run start
+```
 
-## Deploy on Vercel
+### Linting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To run the ESLint checker:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+```
+
+## 6\. Development Workflow
+
+*   **Pages:** Create or modify pages inside the `app/` directory (e.g., `app/page.tsx`).
+*   **Components:** Add isolated UI elements in the `components/` directory.
+*   **Styling:** Use Tailwind CSS utility classes directly within your JSX/TSX files. Global styles are managed via PostCSS.
